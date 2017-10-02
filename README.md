@@ -1,5 +1,5 @@
 # BoxSphere
-This is BoxSphere.
+BoxSphere is a sphere made by box.
 
 
 ## Programming language 
