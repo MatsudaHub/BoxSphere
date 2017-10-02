@@ -1,9 +1,9 @@
 
-int num = 100;                     //y軸回転の正方形の数
-int sm = 100;                      //x軸z軸回転体の数
-color[] colors = new color[num];   //正方形ごとのカラー配列
-float rotate_speed;                //回転スピード
-boolean change_mode = true;        //描画モード切り替え
+int num = 100;  //y軸回転の正方形の数
+int sm = 100;  //x軸z軸回転体の数
+color[] colors = new color[num];  //正方形ごとのカラー配列
+float angl;  //回転スピード
+boolean change_mode = true;  //表示切り替え値
 
 void setup() {
   size(400, 400, P3D);
@@ -27,22 +27,20 @@ void draw() {
     for (int j=1; j<=sm; j++) {
       pushMatrix();
       fill(colors[i]);
-      rotateX(rotate_speed+radians((j*360/sm)));
-      rotateZ(rotate_speed+radians((j*360/sm)));
-      rotateY(rotate_speed+radians((i+1)*360/num));
+      rotateX(angl+radians((j*360/sm)));
+      rotateZ(angl+radians((j*360/sm)));
+      rotateY(angl+radians((i+1)*360/num));
       box(50);
       popMatrix();
     }
   }
-  rotate_speed += 0.01;
+  angl += 0.01;
 }
 
-void mousePressed(){
-  
-  //描画モードの切り替え
+//描画モードの切り替え
+void mousePressed() {
   change_mode = !change_mode;
-  
-  //描画の更新
+
   for (int i=0; i<num; i++) {
     if (change_mode == true) {
       colors[i] = color((i+1)*360/num, 80, 100, 10);
