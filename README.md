@@ -1,4 +1,10 @@
 # processing-boxsphere
+
+## Description
 BoxSphere is a sphere made by box  
-## Environment
-Processing ver2.2.1  
+
+## Requirement
+* Processing ver2.2.1
+
+## License
+MIT License  
